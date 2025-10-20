@@ -77,7 +77,7 @@ body {
 /* --- Menerapkan Animasi Putaran pada Kontainer Bunga --- */
 #flower-container.animate-bloom {
     /* Menerapkan animasi putaran 20 detik, kecepatan konstan, berulang tanpa batas */
-    animation: rotate 20s linear infinite; 
+    animation: rotate 5s linear infinite; 
 }
 
 /* --- Styling Teks Ucapan (Baru Ditambahkan) --- */
