@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 2. Menambahkan Jeda Animasi
         // Ini membuat setiap kelopak mekar secara berurutan, bukan serentak
-        petal.style.animationDelay = `${i * 0.05}s`; 
+        petal.style.animationDelay = `${i * 0,02}s`; 
 
         flowerContainer.appendChild(petal);
     }
