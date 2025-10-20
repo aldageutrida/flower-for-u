@@ -1,17 +1,24 @@
+/* --- Penataan Ulang Body untuk Teks di Bawah Bunga --- */
 body {
-    display: flex;
+    /* Mengubah arah flex menjadi kolom (vertikal) agar bunga dan teks tersusun */
+    display: flex; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f8ff; /* Warna langit muda */
     margin: 0;
+    /* Memberi ruang di bawah agar teks tidak terpotong */
+    padding-bottom: 50px; 
 }
 
+/* --- Elemen Bunga Dasar --- */
 #flower-container {
     position: relative;
-    /* Memberikan ruang agar bunga terlihat */
     width: 200px; 
     height: 200px;
+    /* Menambahkan jarak antara bunga dan teks */
+    margin-bottom: 30px; 
 }
 
 .center {
@@ -24,9 +31,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 10; /* Pastikan putik di atas kelopak */
+    z-index: 10;
 }
 
+/* --- Kelopak (Diperlukan Modifikasi untuk Animasi) --- */
 .petal {
     position: absolute;
     width: 80px;
@@ -35,5 +43,55 @@ body {
     border-radius: 40px 40px 10px 10px;
     top: 50%;
     left: 50%;
-    transform-origin: 0% 50%; /* Titik putar di tengah putik */
+    transform-origin: 0% 50%; 
+    
+    /* PENTING: Awalnya Kelopak Tersembunyi (agar ada efek mekar) */
+    opacity: 0; 
+    
+    /* PENTING: Menerapkan Animasi Mekar */
+    animation: bloom 1s ease-out forwards; 
+}
+
+/* --- Definisi Keyframes Animasi --- */
+
+/* 1. Animasi untuk Mekar (Bloom) */
+@keyframes bloom {
+    0% {
+        /* Mulai dengan skala 0 (sangat kecil/tidak terlihat) */
+        transform: translate(-15px, -50%) rotate(var(--angle)) scale(0); 
+        opacity: 0;
+    }
+    100% {
+        /* Berakhir dengan skala 1 (ukuran penuh) */
+        transform: translate(-15px, -50%) rotate(var(--angle)) scale(1);
+        opacity: 1;
+    }
+}
+
+/* 2. Animasi untuk Putaran (Rotate) */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Menerapkan Animasi Putaran pada Kontainer Bunga --- */
+#flower-container.animate-bloom {
+    /* Menerapkan animasi putaran 20 detik, kecepatan konstan, berulang tanpa batas */
+    animation: rotate 20s linear infinite; 
+}
+
+/* --- Styling Teks Ucapan (Baru Ditambahkan) --- */
+.greeting {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #4a4a4a;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.greeting p:last-child {
+    font-size: 20px;
+    color: #d9534f; /* Warna cerah untuk penekanan */
+    font-weight: bold;
 }
