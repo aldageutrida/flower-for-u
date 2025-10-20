@@ -95,3 +95,12 @@ body {
     color: #d9534f; /* Warna cerah untuk penekanan */
     font-weight: bold;
 }
+/* Styling khusus untuk gambar di dalam greeting */
+.greeting img {
+    width: 150px;       /* Atur lebar foto (misalnya 150 piksel) */
+    height: 150px;      /* Atur tinggi foto */
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran (jika diinginkan) */
+    object-fit: cover;  /* Memastikan foto mengisi lingkaran tanpa terdistorsi */
+    margin-bottom: 20px; /* Memberi jarak antara foto dan tulisan di bawahnya */
+    border: 3px solid #ff69b4; /* Tambahkan bingkai berwarna pink */
+}
