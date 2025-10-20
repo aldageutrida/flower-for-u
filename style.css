@@ -1,77 +1,39 @@
 body {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     min-height: 100vh;
-
     background-color: #f0f8ff; /* Warna langit muda */
-
     margin: 0;
-
 }
-
-
 
 #flower-container {
-
     position: relative;
-
     /* Memberikan ruang agar bunga terlihat */
-
     width: 200px; 
-
     height: 200px;
-
 }
-
-
 
 .center {
-
     width: 50px;
-
     height: 50px;
-
     background-color: #ffd700; /* Kuning emas untuk putik */
-
     border-radius: 50%;
-
     position: absolute;
-
     top: 50%;
-
     left: 50%;
-
     transform: translate(-50%, -50%);
-
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
     z-index: 10; /* Pastikan putik di atas kelopak */
-
 }
 
-
-
 .petal {
-
     position: absolute;
-
     width: 80px;
-
     height: 30px;
-
     background-color: #ff69b4; /* Pink cerah untuk kelopak */
-
     border-radius: 40px 40px 10px 10px;
-
     top: 50%;
-
     left: 50%;
-
     transform-origin: 0% 50%; /* Titik putar di tengah putik */
-
 }
