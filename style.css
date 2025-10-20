@@ -34,7 +34,7 @@ body {
     z-index: 10;
 }
 
-/* --- Kelopak (Diperlukan Modifikasi untuk Animasi) --- */
+/* --- Kelopak (Mode Statis) --- */
 .petal {
     position: absolute;
     width: 80px;
@@ -45,42 +45,15 @@ body {
     left: 50%;
     transform-origin: 0% 50%; 
     
-    /* PENTING: Awalnya Kelopak Tersembunyi (agar ada efek mekar) */
-    opacity: 0; 
-    
-    /* PENTING: Menerapkan Animasi Mekar */
-    animation: bloom 1s ease-out forwards; 
+    /* MENGHILANGKAN: opacity: 0; */
+    /* MENGHILANGKAN: animation: bloom... */
 }
 
-/* --- Definisi Keyframes Animasi --- */
+/* --- HILANGKAN: Definisi Keyframes Animasi (@keyframes bloom dan @keyframes rotate) --- */
 
-/* 1. Animasi untuk Mekar (Bloom) */
-@keyframes bloom {
-    0% {
-        /* Mulai dengan skala 0 (sangat kecil/tidak terlihat) */
-        transform: translate(-15px, -50%) rotate(var(--angle)) scale(0); 
-        opacity: 0;
-    }
-    100% {
-        /* Berakhir dengan skala 1 (ukuran penuh) */
-        transform: translate(-15px, -50%) rotate(var(--angle)) scale(1);
-        opacity: 1;
-    }
-}
+/* --- HILANGKAN: Menerapkan Animasi Putaran pada Kontainer Bunga (#flower-container.animate-bloom) --- */
 
-/* 2. Animasi untuk Putaran (Rotate) */
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* --- Menerapkan Animasi Putaran pada Kontainer Bunga --- */
-#flower-container.animate-bloom {
-    /* Menerapkan animasi putaran 20 detik, kecepatan konstan, berulang tanpa batas */
-    animation: rotate 5s linear infinite; 
-}
-
-/* --- Styling Teks Ucapan (Baru Ditambahkan) --- */
+/* --- Styling Teks Ucapan --- */
 .greeting {
     font-family: 'Arial', sans-serif;
     font-size: 18px;
@@ -95,12 +68,13 @@ body {
     color: #d9534f; /* Warna cerah untuk penekanan */
     font-weight: bold;
 }
+
 /* Styling khusus untuk gambar di dalam greeting */
 .greeting img {
-    width: 150px;       /* Atur lebar foto (misalnya 150 piksel) */
-    height: 150px;      /* Atur tinggi foto */
-    border-radius: 50%; /* Membuat foto berbentuk lingkaran (jika diinginkan) */
-    object-fit: cover;  /* Memastikan foto mengisi lingkaran tanpa terdistorsi */
-    margin-bottom: 20px; /* Memberi jarak antara foto dan tulisan di bawahnya */
-    border: 3px solid #ff69b4; /* Tambahkan bingkai berwarna pink */
+    width: 150px;       
+    height: 150px;      
+    border-radius: 50%; 
+    object-fit: cover;  
+    margin-bottom: 20px; 
+    border: 3px solid #ff69b4; 
 }
