@@ -1,6 +1,6 @@
-/* --- Penataan Ulang Body untuk Teks di Bawah Bunga --- */
+/* --- Penataan Ulang Body --- */
 body {
-    /* Mengubah arah flex menjadi kolom (vertikal) agar bunga dan teks tersusun */
+    /* Mengatur item (teks dan foto) secara vertikal di tengah halaman */
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -8,50 +8,11 @@ body {
     min-height: 100vh;
     background-color: #f0f8ff; /* Warna langit muda */
     margin: 0;
-    /* Memberi ruang di bawah agar teks tidak terpotong */
+    /* Memberi ruang di bawah agar konten tidak terlalu rapat */
     padding-bottom: 50px; 
 }
 
-/* --- Elemen Bunga Dasar --- */
-#flower-container {
-    position: relative;
-    width: 200px; 
-    height: 200px;
-    /* Menambahkan jarak antara bunga dan teks */
-    margin-bottom: 30px; 
-}
-
-.center {
-    width: 50px;
-    height: 50px;
-    background-color: #ffd700; /* Kuning emas untuk putik */
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
-
-/* --- Kelopak (Mode Statis) --- */
-.petal {
-    position: absolute;
-    width: 80px;
-    height: 30px;
-    background-color: #ff69b4; /* Pink cerah untuk kelopak */
-    border-radius: 40px 40px 10px 10px;
-    top: 50%;
-    left: 50%;
-    transform-origin: 0% 50%; 
-    
-    /* MENGHILANGKAN: opacity: 0; */
-    /* MENGHILANGKAN: animation: bloom... */
-}
-
-/* --- HILANGKAN: Definisi Keyframes Animasi (@keyframes bloom dan @keyframes rotate) --- */
-
-/* --- HILANGKAN: Menerapkan Animasi Putaran pada Kontainer Bunga (#flower-container.animate-bloom) --- */
+/* --- HILANG: Kode untuk #flower-container, .center, dan .petal --- */
 
 /* --- Styling Teks Ucapan --- */
 .greeting {
@@ -60,7 +21,7 @@ body {
     color: #4a4a4a;
     text-align: center;
     line-height: 1.6;
-    margin-top: 10px;
+    margin-top: 10px; /* Jarak dari atas halaman (sekarang menjadi konten utama) */
 }
 
 .greeting p:last-child {
@@ -73,7 +34,7 @@ body {
 .greeting img {
     width: 150px;       
     height: 150px;      
-    border-radius: 50%; 
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
     object-fit: cover;  
     margin-bottom: 20px; 
     border: 3px solid #ff69b4; 
