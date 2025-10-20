@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const flowerContainer = document.getElementById('flower-container');
-    const numberOfPetals = 12; // Jumlah kelopak
+    const numberOfPetals = 15; // Jumlah kelopak
     
     // Hitung sudut rotasi untuk setiap kelopak
     const angleStep = 360 / numberOfPetals;
