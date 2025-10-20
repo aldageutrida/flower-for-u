@@ -37,3 +37,47 @@ body {
     left: 50%;
     transform-origin: 0% 50%; /* Titik putar di tengah putik */
 }
+/* --- Bagian Animasi Bunga --- */
+
+/* 1. Animasi untuk Mekar (Bloom) */
+@keyframes bloom {
+    0% {
+        transform: translate(-15px, -50%) rotate(var(--angle)) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-15px, -50%) rotate(var(--angle)) scale(1);
+        opacity: 1;
+    }
+}
+
+/* 2. Animasi untuk Putaran (Rotate) */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Modifikasi pada Elemen --- */
+
+#flower-container.animate-bloom {
+    /* Menerapkan animasi putaran pada kontainer bunga */
+    animation: rotate 20s linear infinite; /* 20 detik, kecepatan konstan, berulang */
+}
+
+.petal {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background-color: #ff69b4; 
+    border-radius: 40px 40px 10px 10px;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+    
+    /* Atur default state (penting untuk animasi) */
+    opacity: 0; 
+    
+    /* Properti animasi mekar */
+    animation: bloom 1s ease-out forwards; /* Durasi 1 detik, melambat di akhir, menjaga state akhir */
+}
+
