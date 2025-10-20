@@ -13,13 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         petal.style.top = '50%';
         petal.style.left = '50%';
 
-        // Geser sedikit kelopak ke samping dan putar
         const rotationAngle = i * angleStep;
         
-        // Transform: geser -15px dari titik putar, lalu putar sesuai sudut.
-        // Transform-origin di CSS sudah disetel ke 0% 50%
-        petal.style.transform = `translate(-15px, -50%) rotate(${rotationAngle}deg)`;
+        // Tambahkan properti CSS untuk animasi mekar (scale)
+        // Kita atur scale awal 0, dan akan diubah oleh CSS/transisi
+        petal.style.transform = `translate(-15px, -50%) rotate(${rotationAngle}deg) scale(0)`;
+        
+        // Tambahkan delay agar kelopak mekar secara berurutan
+        petal.style.animationDelay = `${i * 0.1}s`; 
 
         flowerContainer.appendChild(petal);
     }
+
+    // Tambahkan class untuk memulai animasi setelah semua kelopak dibuat
+    setTimeout(() => {
+        flowerContainer.classList.add('animate-bloom');
+    }, 10); 
 });
